@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Adivina la ecuación</title>
+	<title>resuelve la ecuación</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -17,16 +17,16 @@
 <br>
 <div class="container">
 	<center>
-		<h2 style="color: white;">Adivina la ecuación</h2>
+		<h2 style="color: white;">resuelve la ecuación</h2>
 		<h3 id="player_question"></h3>
 		<h3 id="player_answer"></h3>
         <div id="output" class="col-lg-6"></div>
 		<br>
 		<br>
-
-		<label>Escribe tu ecuación: <b style="color: red">Escribe una ecuación con solo numeros y signos</b></label>
-        <label>Ejemplo: <b style="color: rgb(17, 0, 255)">4+5=9</b></label>
-        <input type="text" id="word" class="form-control" placeholder="ecuación">
+		<label>Escribe tu multiplicación: <b style="color: red">Escribe un solo numero en cada espacio</b></label>
+        <input type="number" id="number1" class="form-control" placeholder="numero">
+		<br>
+        <input type="number" id="number2" class="form-control" placeholder="numero">
 		<br>
         <button onclick="send()" class="btn btn-success" style="width: 30%;">ENVIAR</button>
 	</center>
