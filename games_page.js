@@ -20,16 +20,44 @@ function send(){
     document.getElementById("number1").value = "";
     document.getElementById("number2").value = "";
 }
+question_turn="player1";
+answer_turn="player2";
 function check(){
-    answer = document.getElementById(input_check_box).value;
+    answer = document.getElementById("input_check_box").value;
     console.log(answer);
     if(answer == actual_answer){
         document.body.style.background ="lightgreen";
+        if(answer_turn=="player1"){
+            player1_score=player1_score+1;
+            document.getElementById("player1_score").innerHTML=player1_score;
+        }
+        else{
+            player2_score=player2_score+1;
+            document.getElementById("player2_score").innerHTML=player2_score;
+        }
     }
     else{
         document.body.style.background ="red";
     }
-    setTimeout(function(){document.body.style.background="lightblue"}, 5000);
+    setTimeout(function(){document.body.style.background="orange"}, 5000);
     console.log("espera 5 seg");
+
+    if(question_turn=="player1"){
+        question_turn="player2";
+        document.getElementById("player_question").innerHTML="turno para preguntar - "+ player2_name;
+    }
+    else{
+        question_turn="player1";
+        document.getElementById("player_question").innerHTML="turno para preguntar - "+ player1_name;
+    }
+    if(answer_turn=="player1"){
+        question_turn="player2";
+        document.getElementById("player_answer").innerHTML="turno para responder - "+ player2_name;
+    }
+    else{
+        answer_turn="player1";
+        document.getElementById("player_answer").innerHTML="turno para responder - "+ player1_name;
+    }
+    document.getElementById("output").innerHTML="";
     
 }
